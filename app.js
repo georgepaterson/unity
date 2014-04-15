@@ -44,7 +44,72 @@ app.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });
 
+/**
+ * Interfake configuration.
+ */
+
 var Interfake = require('interfake');
 var interfake = new Interfake();
-interfake.get('/whats-next').body({ next : 'more stuff '});
+
+interfake.createRoute({
+  request: {
+    url: '/user',
+    method: 'get',
+    query: {
+      username: 'Billy',
+      password: 'Fish'
+    }
+  },
+  response: {
+    code: 200,
+    delay: 3000,
+    body: { response: 'f6cd3459f9a39c9784b3e328f05be0f7' }
+  }
+});
+
+interfake.createRoute({
+  request: {
+    url: '/user',
+    method: 'get',
+    query: {
+      username: 'Billy'
+    }
+  },
+  response: {
+    code: 200,
+    delay: 1000,
+    body: { response: null }
+  }
+});
+
+interfake.createRoute({
+  request: {
+    url: '/product',
+    method: 'get',
+    query: {
+      id: 10,
+      key: 'f6cd3459f9a39c9784b3e328f05be0f7'
+    }
+  },
+  response: {
+    code: 200,
+    body: { response: 'success' }
+  }
+});
+
+interfake.createRoute({
+  request: {
+    url: '/product',
+    method: 'get',
+    query: {
+      id: 10,
+      key: null
+    }
+  },
+  response: {
+    code: 405,
+    body: { response: 'failure' }
+  }
+});
+
 interfake.listen(3030);

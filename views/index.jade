@@ -1,6 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  //content goes here
-
+	h1 jQuery promises demo
+	p A demonstration of jQuery promises.
+	p Test 1 is a successful test where the correct key is returned after 3 seconds allowing further actions to use the key.
+	button.test1 Test 1
+	.result1
+	p Test 2 does not return the correct key after 1 second, this prevents further actions.
+	button.test2 Test 2
+	.result2
+	p This demonstration creates a single Node server with two ports for Express and Interfake. Requests are made using a query string only for this demostration.

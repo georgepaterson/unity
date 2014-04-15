@@ -1,2 +1,1 @@
-unity
-=====
+# jQuery promises demo
