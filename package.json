@@ -9,7 +9,8 @@
     "static-favicon": "~1.0.1",
     "method-override": "~1.0.0",
     "errorhandler": "~1.0.0",
-    "jade": "~1.1.5"
+    "jade": "~1.1.5",
+    "interfake": "~1.6.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
